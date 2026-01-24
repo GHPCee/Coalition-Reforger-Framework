@@ -83,6 +83,7 @@ class CRF_SlottingManager : ScriptComponent
 		};
 	}
 	
+	//------------------------------------------------------------------------------------------------
 	void UpdateSlotRole(int slotId, CRF_EGearRole role)
 	{
 		CRF_SlotDataContainer slotData = GetSlotData(slotId);
@@ -94,6 +95,7 @@ class CRF_SlottingManager : ScriptComponent
 		};
 	}
 	
+	//------------------------------------------------------------------------------------------------
 	void UpdateSlotGroup(int slotId, RplId group)
 	{
 		CRF_SlotDataContainer slotData = GetSlotData(slotId);
@@ -105,6 +107,7 @@ class CRF_SlottingManager : ScriptComponent
 		};
 	}
 	
+	//------------------------------------------------------------------------------------------------
 	void UpdateSlotPlayerID(int slotId, int playerId = -1)
 	{	
 		CRF_SlotDataContainer slotData = GetSlotData(slotId);
@@ -116,6 +119,7 @@ class CRF_SlottingManager : ScriptComponent
 		};
 	}
 	
+	//------------------------------------------------------------------------------------------------
 	void UpdateSlotLockedState(int slotId, bool isLocked = false)
 	{
 		CRF_SlotDataContainer slotData = GetSlotData(slotId);
@@ -130,6 +134,7 @@ class CRF_SlottingManager : ScriptComponent
 		};
 	}
 	
+	//------------------------------------------------------------------------------------------------
 	void UpdateSlotDeathState(int slotId, bool input)
 	{
 		CRF_SlotDataContainer slotData = GetSlotData(slotId);

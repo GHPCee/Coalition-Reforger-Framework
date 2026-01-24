@@ -2,7 +2,8 @@ GenericEntity : "{8364151EF33B3B33}Prefabs/Structures/Core/FlagPole_Base.et" {
  ID "50C6D20663830070"
  components {
   CRF_RespawnPointComponent "{645A31042AA16609}" {
-   m_sRespawnPointFaction "BLUFOR"
+   m_sSpawnPointFaction "BLUFOR"
+   m_bIsDefaultSpawn 1
   }
   MeshObject "{645911BD734B5E66}" {
    Object "{C41BFB78E6FFFBCB}Assets/Structures/Military/Flags/FlagPole_01/FlagPole_01.xob"
@@ -84,7 +85,6 @@ GenericEntity : "{8364151EF33B3B33}Prefabs/Structures/Core/FlagPole_Base.et" {
   CRF_ManualMarker : "{E256B56F799AEB41}PrefabsMissionMaking/Markers/SpawnMarkers/BLUFOR_SpawnMarker.et" {
    ID "68682AC1B6C9C4BC"
    coords 0 0 0
-   angles 0 0 0
   }
  }
 }

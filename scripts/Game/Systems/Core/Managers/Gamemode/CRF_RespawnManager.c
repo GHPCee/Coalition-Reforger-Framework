@@ -513,10 +513,10 @@ class CRF_RespawnManager : ScriptComponent
 			if (!respawnComponent)
 				continue;
 
-			if (respawnComponent.m_sRespawnPointFaction != faction)
+			if (respawnComponent.m_sSpawnPointFaction != faction)
 				continue;
 
-			if (!respawnComponent.m_bActiveRespawnPoint)
+			if (!respawnComponent.m_bActiveSpawnPoint)
 				continue;
 
 			sideRespawnPoints.Insert(point)
@@ -537,10 +537,10 @@ class CRF_RespawnManager : ScriptComponent
 			if (!pointRespawnComponent)
 				continue;
 			
-			if (pointRespawnComponent.m_sRespawnPointFaction != faction)
+			if (pointRespawnComponent.m_sSpawnPointFaction != faction)
 				continue;
 			
-			if (!pointRespawnComponent.m_bActiveRespawnPoint)
+			if (!pointRespawnComponent.m_bActiveSpawnPoint)
 				continue;
 
 			RplIDs.Insert(pointRplID)
@@ -753,7 +753,7 @@ class CRF_RespawnManager : ScriptComponent
 				IEntity point = rplComp.GetEntity();
 				CRF_RespawnPointComponent respawnComponent = CRF_RespawnPointComponent.Cast(point.FindComponent(CRF_RespawnPointComponent));
 			
-				if (respawnComponent.m_bActiveRespawnPoint)
+				if (respawnComponent.m_bActiveSpawnPoint)
 					spawnLocation[3] = point.GetOrigin();
 			}
 		}
@@ -791,10 +791,10 @@ class CRF_RespawnManager : ScriptComponent
 			if (!respawnComponent)
 				continue;
 
-			if (respawnComponent.m_sRespawnPointFaction != factionKey)
+			if (respawnComponent.m_sSpawnPointFaction != factionKey)
 				continue;
 
-			if (!respawnComponent.m_bActiveRespawnPoint)
+			if (!respawnComponent.m_bActiveSpawnPoint)
 				continue;
 
 			spawnPoint.GetWorldTransform(spawnPointLocation);
@@ -821,9 +821,6 @@ class CRF_RespawnManager : ScriptComponent
 			
 			string company, platoon, squad, character, format;
 			group.GetCallsigns(company, platoon, squad, character, format);
-			
-			Print(tempSpawnComponent.m_sCallsignOfGroupToSpawn);
-			Print(squad);
 
 			if (tempSpawnComponent.m_sCallsignOfGroupToSpawn != squad)
 				continue;

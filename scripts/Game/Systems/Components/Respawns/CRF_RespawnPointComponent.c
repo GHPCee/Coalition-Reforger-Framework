@@ -2,16 +2,16 @@ class CRF_RespawnPointComponentClass: ScriptComponentClass {}
 class CRF_RespawnPointComponent: ScriptComponent
 {
 	[Attribute("true", UIWidgets.CheckBox,""),RplProp(onRplName: "OnRespawnPointStateChanged")]
-	bool m_bActiveRespawnPoint;
+	bool m_bActiveSpawnPoint;
 	
 	[Attribute("", uiwidget: UIWidgets.ComboBox, enums: {ParamEnum("", ""), ParamEnum("BLUFOR", "BLUFOR"), ParamEnum("OPFOR", "OPFOR"), ParamEnum("INDFOR", "INDFOR"), ParamEnum("CIV", "CIV")})]
-	string m_sRespawnPointFaction;
+	string m_sSpawnPointFaction;
 
 	[Attribute("Base", "auto", "Nickname for the respawn point.")]
-	string m_sRespawnPointName;
+	string m_sSpawnPointName;
 	
 	[Attribute("0", "auto", "Is this respawn point the default respawn point to be selected")]
-	bool m_bIsDefaultRespawn;
+	bool m_bIsDefaultSpawn;
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	override void OnPostInit(IEntity owner)
@@ -44,7 +44,7 @@ class CRF_RespawnPointComponent: ScriptComponent
 		if (!Replication.IsServer())
 			return;
 			
-		m_bActiveRespawnPoint = active;
+		m_bActiveSpawnPoint = active;
 		Replication.BumpMe();
 	}
 	

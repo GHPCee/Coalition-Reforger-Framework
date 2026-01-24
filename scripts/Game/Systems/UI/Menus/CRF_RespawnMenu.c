@@ -105,12 +105,12 @@ class CRF_RespawnMenu: ChimeraMenuBase
 			vector worldPos = point.GetOrigin();
 			
 			// Create map marker
-			CreateSpawnPointMarker(respawnPointComponent.m_sRespawnPointName, worldPos);
+			CreateSpawnPointMarker(respawnPointComponent.m_sSpawnPointName, worldPos);
 			
 			// Add option to menu and store the component with it
-			m_wSpawnListBox.AddItem(respawnPointComponent.m_sRespawnPointName);
+			m_wSpawnListBox.AddItem(respawnPointComponent.m_sSpawnPointName);
 			
-			if (respawnPointComponent.m_bIsDefaultRespawn)
+			if (respawnPointComponent.m_bIsDefaultSpawn)
 			{
 				m_wSpawnListBox.SetItemSelected(index, true, true, true);
 				GetGame().GetCallqueue().CallLater(UpdateSpawnSelection, 500, false);
@@ -157,20 +157,20 @@ class CRF_RespawnMenu: ChimeraMenuBase
 			return;
 		
 		// Ignore spawn point if not for player faction
-		if (respawnComponent.m_sRespawnPointFaction != m_factionKey)
+		if (respawnComponent.m_sSpawnPointFaction != m_factionKey)
 			return;
 		
 		if (active)
 		{
 			// Add the option to respawn selection and add the marker to the map
-			m_wSpawnListBox.AddItem(respawnComponent.m_sRespawnPointName);
-			CreateSpawnPointMarker(respawnComponent.m_sRespawnPointName, worldPos);
+			m_wSpawnListBox.AddItem(respawnComponent.m_sSpawnPointName);
+			CreateSpawnPointMarker(respawnComponent.m_sSpawnPointName, worldPos);
 		}
 		else
 		{
 			int index = CRF_RespawnManager.GetInstance().m_RespawnPointsRplID.Find(rplID);
 			m_wSpawnListBox.RemoveItem(index);
-			RemoveSpawnPointMarker(respawnComponent.m_sRespawnPointName, worldPos);
+			RemoveSpawnPointMarker(respawnComponent.m_sSpawnPointName, worldPos);
 			
 			// if the respawn being changed was confirmed, unconfirm it
 			if (rplID == rm.m_SelectedSpawnRplID && rm.m_RespawnConfirmed)
